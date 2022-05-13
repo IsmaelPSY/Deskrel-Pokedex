@@ -40,20 +40,19 @@ const Pokemon = () => {
     return (
         <div>
             <div className='w-4/5 mx-auto text-left p-5 shadow-xl mb-10 shadow-gray-400'>
-            <img src={pokemonImgUrl} alt='' />
-            <h1>{pokemonName}</h1>
-            <h1>#{id}</h1>
-            <Link to={`/pokedex/${id}/encounters`}>Encounters</Link>
-            Type:
-                {pokemonType.map(item => <span key={item.slot} >{item.type.name}</span>)}
-            <h2>HP: {pokemonHP}</h2>
-            <h2>Attack: {pokemonAttack}</h2>
-            <h2>Defense: {pokemonDefense}</h2>
-            <h2>Speed: {pokemonSpeed}</h2>
-            <h2>Height: {pokemonHeight}</h2>
-            <h2>Weight: {pokemonWeight}</h2>
-            Abilities: 
-            {pokemonAbilities.map(item => <span key={item.ability.name}>{item.ability.name}</span>) }
+            <img className='mx-auto' src={pokemonImgUrl} alt='' />
+            <p className=' text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-500 text-4xl font-black'>{pokemonName.toUpperCase()}<span>#{id}</span></p>
+            <h1 className='text-xl'>Where to find it? 
+            <Link className='ml-10 text-4xl font-black text-red-700' to={`/pokedex/${id}/encounters`}>Encounters</Link>
+            </h1>
+            <h2 className='text-2xl font-medium'>Type: {pokemonType.map(item => <span className='font-black text-2xl text-emerald-700 ml-2' key={item.slot} >{item.type.name}</span>)}</h2>
+            <h2 className='text-2xl font-medium'>HP:     <span className='font-black text-2xl text-emerald-700'>{pokemonHP}</span></h2>
+            <h2 className='text-2xl font-medium'>Attack: <span className='font-black text-2xl text-emerald-700'>{pokemonAttack}</span></h2>
+            <h2 className='text-2xl font-medium'>Defense:<span className='font-black text-2xl text-emerald-700'> {pokemonDefense}</span></h2>
+            <h2 className='text-2xl font-medium'>Speed:  <span className='font-black text-2xl text-emerald-700'>{pokemonSpeed}</span></h2>
+            <h2 className='text-2xl font-medium'>Height: <span className='font-black text-2xl text-emerald-700'>{pokemonHeight}</span></h2>
+            <h2 className='text-2xl font-medium'>Weight: <span className='font-black text-2xl text-emerald-700'>{pokemonWeight}</span></h2>
+            <h2 className='text-2xl font-medium'>Abilities: {pokemonAbilities.map(item => <span className='font-black text-2xl text-emerald-700 ml-2' key={item.ability.name}>{item.ability.name}</span>) }</h2> 
             </div>
             <div className='w-4/5 mx-auto text-left p-5 shadow-xl mb-10 shadow-gray-400'>
             <h1 className='text-2xl mb-2 font-medium'>Movements</h1> 
